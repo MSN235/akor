@@ -244,7 +244,7 @@
             border-radius: 30px;
             padding: 6px;
             margin: 0 auto 40px;
-            max-width: 550px; 
+            max-width: 600px; 
             box-shadow: 0 5px 15px rgba(197, 168, 128, 0.15);
         }
 
@@ -762,6 +762,7 @@
             
             <div class="model-filters" id="filters-1">
                 <button class="model-filter-btn active" onclick="filterModel(event, 1, 'all')">Toutes</button>
+                <button class="model-filter-btn" onclick="filterModel(event, 1, 'p37')">37</button>
                 <button class="model-filter-btn" onclick="filterModel(event, 1, 'p38')">38</button>
                 <button class="model-filter-btn" onclick="filterModel(event, 1, 'p39')">39</button>
                 <button class="model-filter-btn" onclick="filterModel(event, 1, 'p40')">40</button>
@@ -770,6 +771,62 @@
             </div>
 
             <div class="products-grid" id="grid-1">
+
+                <!-- Carte Modèle 1 - Pointure 37 (Motif Goutte Multicolore) -->
+                <div class="product-card filterDiv p37 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="137- Tapettes sans peau1.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="137- Tapettes sans peau11.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="137- Tapettes sans peau111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="137- Tapettes sans peau1111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 37</div>
+                            <div class="overlay-line-2">Motif Goutte Multicolore</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Non-Leather Slippers</h4>
+                        <p class="product-color-name">Motif Goutte Multicolore</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20137-Motif%20Goutte%20Multicolore" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Carte Modèle 1 - Pointure 37 (Motif Goutte Doré/Blanc) -->
+                <div class="product-card filterDiv p37 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="137- Tapettes sans peau2.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="137- Tapettes sans peau22.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="137- Tapettes sans peau222.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="137- Tapettes sans peau2222.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 37</div>
+                            <div class="overlay-line-2">Motif Goutte Doré & Blanc</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Non-Leather Slippers</h4>
+                        <p class="product-color-name">Motif Goutte Doré & Blanc</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20137-Motif%20Goutte%20Dor%C3%A9%20%26%20Blanc" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
 
                 <!-- Carte Modèle 1 - Pointure 38 (Motif Orange/Marron) -->
                 <div class="product-card filterDiv p38 show">
@@ -1061,6 +1118,8 @@
             
             <div class="model-filters" id="filters-2">
                 <button class="model-filter-btn active" onclick="filterModel(event, 2, 'all')">Toutes</button>
+                <button class="model-filter-btn" onclick="filterModel(event, 2, 'p36')">36</button>
+                <button class="model-filter-btn" onclick="filterModel(event, 2, 'p37')">37</button>
                 <button class="model-filter-btn" onclick="filterModel(event, 2, 'p38')">38</button>
                 <button class="model-filter-btn" onclick="filterModel(event, 2, 'p39')">39</button>
                 <button class="model-filter-btn" onclick="filterModel(event, 2, 'p40')">40</button>
@@ -1068,6 +1127,90 @@
             </div>
 
             <div class="products-grid" id="grid-2">
+
+                <!-- Carte Modèle 2 - Pointure 36 (Double Sangle Orange/Noir) -->
+                <div class="product-card filterDiv p36 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="236- Tapettes avec peau1.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="236- Tapettes avec peau11.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="236- Tapettes avec peau111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="236- Tapettes avec peau1111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 36</div>
+                            <div class="overlay-line-2">Cuir Marron & Double Sangle Orange/Noir</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Leather Slippers</h4>
+                        <p class="product-color-name">Marron & Double Sangle</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20236-Marron%20%26%20Double%20Sangle" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Carte Modèle 2 - Pointure 37 (Double Sangle) -->
+                <div class="product-card filterDiv p37 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="237- Tapettes avec peau1.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="237- Tapettes avec peau11.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="237- Tapettes avec peau111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="237- Tapettes avec peau1111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 37</div>
+                            <div class="overlay-line-2">Cuir Marron & Double Sangle</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Leather Slippers</h4>
+                        <p class="product-color-name">Marron & Double Sangle</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20237-Marron%20%26%20Double%20Sangle" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Carte Modèle 2 - Pointure 37 (Motif Multicolore) -->
+                <div class="product-card filterDiv p37 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="237- Tapettes avec peau2.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="237- Tapettes avec peau22.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="237- Tapettes avec peau222.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="237- Tapettes avec peau2222.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 37</div>
+                            <div class="overlay-line-2">Cuir Marron & Motif Multicolore</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Leather Slippers</h4>
+                        <p class="product-color-name">Marron & Motif Multicolore</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20237-Marron%20%26%20Motif%20Multicolore" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
 
                 <!-- Carte Modèle 2 - Pointure 38 (Fleur Violette/Orange) -->
                 <div class="product-card filterDiv p38 show">
@@ -1404,6 +1547,7 @@
             
             <div class="model-filters" id="filters-4">
                 <button class="model-filter-btn active" onclick="filterModel(event, 4, 'all')">Toutes</button>
+                <button class="model-filter-btn" onclick="filterModel(event, 4, 'p37')">37</button>
                 <button class="model-filter-btn" onclick="filterModel(event, 4, 'p38')">38</button>
                 <button class="model-filter-btn" onclick="filterModel(event, 4, 'p39')">39</button>
                 <button class="model-filter-btn" onclick="filterModel(event, 4, 'p40')">40</button>
@@ -1412,6 +1556,62 @@
             </div>
 
             <div class="products-grid" id="grid-4">
+
+                <!-- Carte Modèle 4 - Pointure 37 (Perles Orange) -->
+                <div class="product-card filterDiv p37 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="437- sandales avec peau1.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="437- sandales avec peau11.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="437- sandales avec peau111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="437- sandales avec peau1111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 37</div>
+                            <div class="overlay-line-2">Cuir Marron & Perles Orange</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Leather Sandals</h4>
+                        <p class="product-color-name">Marron & Perles Orange</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20437-Marron%20%26%20Perles%20Orange" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Carte Modèle 4 - Pointure 37 (Perles Vertes) -->
+                <div class="product-card filterDiv p37 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="437- sandales avec peau2.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="437- sandales avec peau22.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="437- sandales avec peau222.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="437- sandales avec peau2222.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 37</div>
+                            <div class="overlay-line-2">Cuir Marron & Perles Vertes</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Leather Sandals</h4>
+                        <p class="product-color-name">Marron & Perles Vertes</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20437-Marron%20%26%20Perles%20Vertes" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
 
                 <!-- Carte Modèle 4 - Pointure 38 (Bande Multicolore) -->
                 <div class="product-card filterDiv p38 show">
