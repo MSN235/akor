@@ -1,0 +1,1816 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AkOr Shop - Des essentiels en accord avec votre style</title>
+    
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+
+    <!-- Polices luxueuses -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- VARIABLES DE COULEURS LUXUEUSES --- */
+        :root {
+            --bg-color: #faeed5; 
+            --bg-alt: #ffffff;
+            --text-color: #1a1a1a;
+            --accent-color: #c5a880; 
+            --wa-color: #4b5344; 
+            --font-titre: 'Playfair Display', serif;
+            --font-texte: 'Montserrat', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* --- FOND LUXUEUX --- */
+        body {
+            background: radial-gradient(circle at top left, #fdfbf7 0%, #faeed5 50%, #e8d0a9 100%);
+            color: var(--text-color);
+            font-family: var(--font-texte);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('https://images.unsplash.com/photo-1584347783935-802521bc3dc4?q=80&w=2000&auto=format&fit=crop'); 
+            background-size: cover;
+            background-position: center;
+            opacity: 0.22; 
+            z-index: -1;
+        }
+
+        /* --- NAVIGATION --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 1px 15px rgba(0,0,0,0.03);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: var(--text-color);
+            position: absolute;
+            left: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            padding-bottom: 5px;
+        }
+
+        nav ul li a.active, nav ul li a:hover {
+            border-bottom: 1px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        /* --- ACCUEIL --- */
+        #accueil {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 60px;
+        }
+
+        .main-logo {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            margin-bottom: 25px;
+            object-fit: cover;
+            box-shadow: 0 15px 35px rgba(197, 168, 128, 0.25); 
+        }
+
+        #accueil h1 {
+            font-family: var(--font-titre);
+            font-size: 4.5rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            color: var(--text-color);
+        }
+
+        .decorative-star {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        #accueil p.slogan {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--text-color);
+            margin-bottom: 45px;
+            font-style: italic;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            border: 1px solid var(--accent-color); 
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.5);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-alt);
+        }
+
+        /* --- SECTIONS GÉNÉRALES --- */
+        section {
+            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: var(--font-titre);
+            font-size: 36px;
+            font-weight: 400;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .title-separator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .title-separator span {
+            height: 1px;
+            width: 60px;
+            background-color: var(--accent-color);
+        }
+
+        .section-intro {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #4a4a4a;
+            margin-bottom: 60px;
+            max-width: 600px;
+        }
+
+        /* --- STRUCTURE PAR MODÈLE --- */
+        .model-section {
+            width: 100%;
+            margin-bottom: 90px;
+        }
+
+        .model-title {
+            font-family: var(--font-titre);
+            font-size: 26px;
+            font-weight: 500;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .model-divider {
+            width: 40px;
+            height: 2px;
+            background: var(--accent-color);
+            margin: 0 auto 25px;
+        }
+
+        .model-filters {
+            display: flex;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid var(--accent-color);
+            border-radius: 30px;
+            padding: 6px;
+            margin: 0 auto 40px;
+            max-width: 550px; 
+            box-shadow: 0 5px 15px rgba(197, 168, 128, 0.15);
+        }
+
+        .model-filter-btn {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            font-family: var(--font-texte);
+            white-space: nowrap;
+        }
+
+        .model-filter-btn.active, .model-filter-btn:hover {
+            background: var(--accent-color);
+            color: #fff;
+        }
+
+        /* --- GRILLE & CARTES PRODUITS --- */
+        .products-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; 
+            gap: 30px;
+            width: 100%;
+        }
+
+        .filterDiv { 
+            display: none !important; 
+        }
+        .filterDiv.show { 
+            display: flex !important; 
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid rgba(197, 168, 128, 0.15);
+            width: 320px; 
+            flex: 0 0 320px; 
+            max-width: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(197, 168, 128, 0.2);
+        }
+
+        /* --- CARROUSEL & LIGHTBOX --- */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            background-color: #ffffff;
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.85);
+            color: var(--text-color);
+            border: 1px solid rgba(197, 168, 128, 0.5);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            font-size: 14px;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .carousel-container:hover .carousel-arrow {
+            opacity: 1;
+        }
+
+        .carousel-arrow:hover { background: var(--accent-color); color: #fff; }
+        .carousel-arrow.prev { left: 10px; }
+        .carousel-arrow.next { right: 10px; }
+
+        .carousel-track {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            scroll-behavior: smooth;
+        }
+
+        .carousel-track::-webkit-scrollbar { display: none; }
+
+        .carousel-img {
+            flex: 0 0 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            scroll-snap-align: center;
+            cursor: zoom-in;
+        }
+
+        .carousel-counter {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            z-index: 5;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 5;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: var(--accent-color);
+            transform: scale(1.3);
+        }
+
+        .btn-show-details {
+            position: absolute;
+            bottom: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid var(--accent-color);
+            color: var(--text-color);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            z-index: 8;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .btn-show-details:hover {
+            background: var(--accent-color);
+            color: #fff;
+        }
+
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(253, 251, 247, 0.98); 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 30px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid var(--accent-color);
+            z-index: 15;
+            cursor: default;
+        }
+
+        .product-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .close-overlay {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+
+        .overlay-line-1 {
+            text-align: left;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(197, 168, 128, 0.4);
+            padding-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .overlay-line-2 {
+            text-align: right;
+            font-size: 14px;
+            font-style: italic;
+            color: var(--text-color);
+            letter-spacing: 0.5px;
+        }
+
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #lightbox.active { display: flex; }
+
+        #lightbox img {
+            max-width: 90vw;
+            max-height: 85vh;
+            border-radius: 5px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            object-fit: contain;
+            background: #fff;
+        }
+
+        #lightbox .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        #lightbox .close-lightbox:hover { color: var(--accent-color); }
+
+        /* --- TEXTES DES CARTES --- */
+        .product-card h4 {
+            font-family: var(--font-texte);
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .product-color-name {
+            font-size: 14px;
+            color: var(--text-color);
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .product-price {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-color); 
+        }
+
+        .btn-buy {
+            display: inline-block;
+            background-color: var(--wa-color);
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-weight: 500;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        .btn-buy:hover { background-color: #333; }
+
+        /* --- AUTRES SECTIONS --- */
+        #apropos {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(5px);
+            border-radius: 2px;
+            margin: 50px auto;
+            padding: 80px 40px;
+            border: 1px solid rgba(197, 168, 128, 0.2);
+        }
+
+        .about-text {
+            max-width: 800px;
+            font-size: 1.15rem;
+            font-weight: 300;
+            line-height: 1.9;
+            color: var(--text-color);
+        }
+        .about-text p { margin-bottom: 25px; }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 40px 25px;
+            text-align: center;
+            border: 1px solid rgba(197, 168, 128, 0.25);
+            transition: transform 0.3s ease;
+        }
+        
+        .step-card:hover { transform: translateY(-5px); }
+
+        .step-number {
+            font-family: var(--font-titre);
+            font-size: 50px;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .step-card h3 {
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .step-card p {
+            font-size: 14px;
+            font-weight: 300;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--text-color);
+            text-align: center;
+            padding: 80px 20px 40px;
+            border-top: 1px solid rgba(197, 168, 128, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-logo {
+            font-family: var(--font-titre);
+            font-size: 32px;
+            margin-bottom: 25px;
+            color: var(--accent-color);
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        .contact-info a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .social-links { margin-top: 20px; margin-bottom: 40px; }
+        
+        .social-links a {
+            color: var(--text-color);
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .social-links a:hover { color: var(--accent-color); }
+
+        .copyright { font-size: 13px; color: #888; }
+
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--wa-color);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(75, 83, 68, 0.4);
+            text-decoration: none;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .floating-whatsapp:hover { transform: scale(1.1); }
+        .floating-whatsapp svg { width: 32px; height: 32px; fill: white; }
+
+        /* --- MOBILE --- */
+        @media (max-width: 900px) {
+            nav { justify-content: center; }
+            .menu-icon { display: block; }
+            nav ul {
+                display: none; 
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: rgba(253, 251, 247, 0.98);
+                padding: 30px 0;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+                gap: 25px;
+            }
+            nav ul.show-menu { display: flex; }
+            #accueil h1 { font-size: 3.5rem; }
+            .steps-grid { grid-template-columns: 1fr; max-width: 450px; margin: 0 auto; }
+            .carousel-arrow { display: none; }
+            .product-img { height: 320px; }
+            #apropos { padding: 50px 20px; }
+            .social-links a { margin: 0 10px; font-size: 12px; }
+        }
+
+        @media (max-width: 480px) {
+            #accueil h1 { font-size: 2.8rem; }
+            .section-title { font-size: 24px; }
+            .model-title { font-size: 22px; }
+            .btn-outline { padding: 12px 25px; }
+            .product-card { padding: 15px; width: 100%; flex: 0 0 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lightbox -->
+    <div id="lightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <img id="lightbox-img" src="" alt="Aperçu agrandi">
+    </div>
+
+    <header>
+        <nav>
+            <div class="menu-icon">☰</div>
+            <ul>
+                <li><a href="#accueil" class="active">ACCUEIL</a></li>
+                <li><a href="#chaussures">CHAUSSURES</a></li>
+                <li><a href="#apropos">À PROPOS</a></li>
+                <li><a href="#commander">COMMENT COMMANDER ?</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="accueil">
+        <img src="logo.jpg" alt="Logo AkOr Shop" class="main-logo">
+        <h1>AkOr Shop</h1>
+        <div class="decorative-star">✦</div>
+        <p class="slogan">Des essentiels en accord avec votre style. ✨</p>
+        <a href="#chaussures" class="btn-outline">DÉCOUVRIR NOS CHAUSSURES →</a>
+    </section>
+
+    <section id="chaussures">
+        <div class="title-separator">
+            <span></span>
+            <h2 class="section-title">Notre Collection</h2>
+            <span></span>
+        </div>
+        <p class="section-intro">Découvrez nos modèles déclinés par pointures et couleurs.</p>
+        
+        <!-- ========================================== -->
+        <!-- LIGNE MODÈLE 1 : Beaded Non-Leather Slippers -->
+        <!-- ========================================== -->
+        <div class="model-section" id="model-1">
+            <h3 class="model-title">1- Beaded Non-Leather Slippers : Tapettes sans cuir décorées de perles.</h3>
+            <div class="model-divider"></div>
+            
+            <div class="model-filters" id="filters-1">
+                <button class="model-filter-btn active" onclick="filterModel(event, 1, 'all')">Toutes</button>
+                <button class="model-filter-btn" onclick="filterModel(event, 1, 'p38')">38</button>
+                <button class="model-filter-btn" onclick="filterModel(event, 1, 'p39')">39</button>
+                <button class="model-filter-btn" onclick="filterModel(event, 1, 'p40')">40</button>
+                <button class="model-filter-btn" onclick="filterModel(event, 1, 'p41')">41</button>
+                <button class="model-filter-btn" onclick="filterModel(event, 1, 'p42')">42</button>
+            </div>
+
+            <div class="products-grid" id="grid-1">
+
+                <!-- Carte Modèle 1 - Pointure 38 (Motif Orange/Marron) -->
+                <div class="product-card filterDiv p38 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="138- tapettes sans peau1.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="138- tapettes sans peau11.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="138- tapettes sans peau111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="138- tapettes sans peau1111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 38</div>
+                            <div class="overlay-line-2">Motif Goutte Orange & Marron</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Non-Leather Slippers</h4>
+                        <p class="product-color-name">Motif Goutte Orange & Marron</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20138-Motif%20Goutte%20Orange%20%26%20Marron" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Carte Modèle 1 - Pointure 38 (Motif Oeil Blanc/Bleu/Marron) -->
+                <div class="product-card filterDiv p38 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="138- tapettes sans peau2.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="138- tapettes sans peau22.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="138- tapettes sans peau222.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="138- tapettes sans peau2222.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 38</div>
+                            <div class="overlay-line-2">Motif Œil Blanc, Bleu & Marron</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Non-Leather Slippers</h4>
+                        <p class="product-color-name">Motif Œil Blanc, Bleu & Marron</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20138-Motif%20%C5%92il%20Blanc%2C%20Bleu%20%26%20Marron" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Carte Modèle 1 - Pointure 39 (Motif Vert/Jaune/Rouge) -->
+                <div class="product-card filterDiv p39 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="139- tapettes sans peau1.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="139- tapettes sans peau11.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="139- tapettes sans peau111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="139- tapettes sans peau1111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 39</div>
+                            <div class="overlay-line-2">Motif Vert, Jaune & Rouge</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Non-Leather Slippers</h4>
+                        <p class="product-color-name">Motif Vert, Jaune & Rouge</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20139-Motif%20Vert%2C%20Jaune%20%26%20Rouge" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Carte Modèle 1 - Pointure 39 (Motif Pétales Rouge/Blanc) -->
+                <div class="product-card filterDiv p39 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="139- tapettes sans peau2.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="139- tapettes sans peau22.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="139- tapettes sans peau222.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="139- tapettes sans peau2222.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 39</div>
+                            <div class="overlay-line-2">Motif Pétales Rouge & Blanc</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Non-Leather Slippers</h4>
+                        <p class="product-color-name">Motif Pétales Rouge & Blanc</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20139-Motif%20P%C3%A9tales%20Rouge%20%26%20Blanc" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+                
+                <!-- Carte Modèle 1 - Pointure 40 (Motif Goutte) -->
+                <div class="product-card filterDiv p40 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 3</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="140-beaded non-leather slippers4.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="140-beaded non-leather slippers44.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="140-beaded non-leather slippers444.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 40</div>
+                            <div class="overlay-line-2">Motif Goutte Blanc & Jaune</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Non-Leather Slippers</h4>
+                        <p class="product-color-name">Motif Goutte Blanc/Jaune</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20140-Motif%20Goutte%20Blanc%2FJaune" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Carte Modèle 1 - Pointure 40 (Motif Rond Noir & Bleu) -->
+                <div class="product-card filterDiv p40 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="140-beaded non-leather slippers3.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="140-beaded non-leather slippers33.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="140-beaded non-leather slippers333.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="140-beaded non-leather slippers3333.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 40</div>
+                            <div class="overlay-line-2">Motif Rond Noir & Bleu</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Non-Leather Slippers</h4>
+                        <p class="product-color-name">Motif Rond Noir & Bleu</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20140-Motif%20Rond%20Noir%20%26%20Bleu" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Carte Modèle 1 - Pointure 41 (Motif Éventail) -->
+                <div class="product-card filterDiv p41 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 3</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="141-beaded non-leather slippers1.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="141-beaded non-leather slippers11.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="141-beaded non-leather slippers111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 41</div>
+                            <div class="overlay-line-2">Motif Éventail Doré</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Non-Leather Slippers</h4>
+                        <p class="product-color-name">Motif Éventail Doré</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20141-Motif%20%C3%89ventail%20Dor%C3%A9" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Carte Modèle 1 - Pointure 41 (Motif Rond Multicolore) -->
+                <div class="product-card filterDiv p41 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="141-beaded non-leather slippers2.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="141-beaded non-leather slippers22.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="141-beaded non-leather slippers222.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="141-beaded non-leather slippers2222.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 41</div>
+                            <div class="overlay-line-2">Motif Rond Multicolore</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Non-Leather Slippers</h4>
+                        <p class="product-color-name">Motif Rond Multicolore</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20141-Motif%20Rond%20Multicolore" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Carte Modèle 1 - Pointure 42 Rond -->
+                <div class="product-card filterDiv p42 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="142-beaded non-leather slippers1.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="142-beaded non-leather slippers11.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="142-beaded non-leather slippers111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="142-beaded non-leather slippers12.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 42</div>
+                            <div class="overlay-line-2">Motif Rond Doré</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Non-Leather Slippers</h4>
+                        <p class="product-color-name">Motif Rond Doré</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20142-Motif%20Rond%20Dor%C3%A9" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Carte Modèle 1 - Pointure 42 Éventail -->
+                <div class="product-card filterDiv p42 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="142-beaded non-leather slippers2.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="142-beaded non-leather slippers22.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="142-beaded non-leather slippers222.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="142-beaded non-leather slippers12.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 42</div>
+                            <div class="overlay-line-2">Motif Éventail Doré</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Non-Leather Slippers</h4>
+                        <p class="product-color-name">Motif Éventail Doré</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20142-Motif%20%C3%89ventail%20Dor%C3%A9" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- LIGNE MODÈLE 2 : Beaded Leather Slippers   -->
+        <!-- ========================================== -->
+        <div class="model-section" id="model-2">
+            <h3 class="model-title">2- Beaded Leather Slippers : Tapettes en cuir décorées de perles.</h3>
+            <div class="model-divider"></div>
+            
+            <div class="model-filters" id="filters-2">
+                <button class="model-filter-btn active" onclick="filterModel(event, 2, 'all')">Toutes</button>
+                <button class="model-filter-btn" onclick="filterModel(event, 2, 'p38')">38</button>
+                <button class="model-filter-btn" onclick="filterModel(event, 2, 'p39')">39</button>
+                <button class="model-filter-btn" onclick="filterModel(event, 2, 'p40')">40</button>
+                <button class="model-filter-btn" onclick="filterModel(event, 2, 'p42')">42</button>
+            </div>
+
+            <div class="products-grid" id="grid-2">
+
+                <!-- Carte Modèle 2 - Pointure 38 (Fleur Violette/Orange) -->
+                <div class="product-card filterDiv p38 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="238- tapettes avec peau1.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="238- tapettes avec peau11.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="238- tapettes avec peau111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="238- tapettes avec peau1111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 38</div>
+                            <div class="overlay-line-2">Cuir Marron & Motif Fleur Violet/Orange</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Leather Slippers</h4>
+                        <p class="product-color-name">Marron & Fleur Violet/Orange</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20238-Marron%20%26%20Fleur%20Violet%2FOrange" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Carte Modèle 2 - Pointure 38 (Double Sangle Multicolore) -->
+                <div class="product-card filterDiv p38 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="238- tapettes avec peau2.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="238- tapettes avec peau22.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="238- tapettes avec peau222.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="238- tapettes avec peau2222.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 38</div>
+                            <div class="overlay-line-2">Cuir Marron & Double Sangle Multicolore</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Leather Slippers</h4>
+                        <p class="product-color-name">Marron & Double Sangle</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20238-Marron%20%26%20Double%20Sangle%20Multicolore" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Carte Modèle 2 - Pointure 38 (Double Sangle Blanche) -->
+                <div class="product-card filterDiv p38 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="238- tapettes avec peau3.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="238- tapettes avec peau33.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="238- tapettes avec peau333.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="238- tapettes avec peau3333.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 38</div>
+                            <div class="overlay-line-2">Cuir Marron & Double Sangle Blanche</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Leather Slippers</h4>
+                        <p class="product-color-name">Marron & Double Sangle Blanche</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20238-Marron%20%26%20Double%20Sangle%20Blanche" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Carte Modèle 2 - Pointure 39 (Marron & Jaune/Noir) -->
+                <div class="product-card filterDiv p39 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="239- tapettes avec peau1.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="239- tapettes avec peau11.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="239- tapettes avec peau111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="239- tapettes avec peau1111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 39</div>
+                            <div class="overlay-line-2">Cuir Marron, Jaune & Noir</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Leather Slippers</h4>
+                        <p class="product-color-name">Marron, Jaune & Noir</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20239-Marron%2C%20Jaune%20%26%20Noir" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+                
+                <!-- Carte Modèle 2 - Pointure 40 (Rouge & Cercles) -->
+                <div class="product-card filterDiv p40 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 3</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="240-Tapettes en cuir décorées de perles1.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="240-Tapettes en cuir décorées de perles11.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="240-Tapettes en cuir décorées de perles111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 40</div>
+                            <div class="overlay-line-2">Cuir Rouge & Cercles</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Leather Slippers</h4>
+                        <p class="product-color-name">Rouge & Cercles</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20240-Rouge%20%26%20Cercles" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Carte Modèle 2 - Pointure 42 (Rouge & Cercles) -->
+                <div class="product-card filterDiv p42 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="242-Tapettes en cuir décorées de perles1.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="242-Tapettes en cuir décorées de perles11.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="242-Tapettes en cuir décorées de perles111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="242-Tapettes en cuir décorées de perles1111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 42</div>
+                            <div class="overlay-line-2">Cuir Rouge & Cercles</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Leather Slippers</h4>
+                        <p class="product-color-name">Rouge & Cercles</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20242-Rouge%20%26%20Cercles" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Carte Modèle 2 - Pointure 42 (Rouge & Double Sangle) -->
+                <div class="product-card filterDiv p42 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="242-Tapettes en cuir décorées de perles2.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="242-Tapettes en cuir décorées de perles22.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="242-Tapettes en cuir décorées de perles222.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="242-Tapettes en cuir décorées de perles2222.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 42</div>
+                            <div class="overlay-line-2">Cuir Rouge & Double Sangle</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Leather Slippers</h4>
+                        <p class="product-color-name">Rouge & Double Sangle</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20242-Rouge%20%26%20Double%20Sangle" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- LIGNE MODÈLE 3 : Beaded Non-Leather Sandals -->
+        <!-- ========================================== -->
+        <div class="model-section" id="model-3">
+            <h3 class="model-title">3- Beaded Non-Leather Sandals : Sandales sans cuir décorées de perles.</h3>
+            <div class="model-divider"></div>
+            
+            <div class="model-filters" id="filters-3">
+                <button class="model-filter-btn active" onclick="filterModel(event, 3, 'all')">Toutes</button>
+                <button class="model-filter-btn" onclick="filterModel(event, 3, 'p41')">41</button>
+                <button class="model-filter-btn" onclick="filterModel(event, 3, 'p42')">42</button>
+            </div>
+
+            <div class="products-grid" id="grid-3">
+
+                <!-- Carte Modèle 3 - Pointure 41 (Orange) -->
+                <div class="product-card filterDiv p41 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="341-Sandales sans cuir décorées de perles1.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="341-Sandales sans cuir décorées de perles11.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="341-Sandales sans cuir décorées de perles111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="341-Sandales sans cuir décorées de perles12.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 41</div>
+                            <div class="overlay-line-2">Orange & Multicolore</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Non-Leather Sandals</h4>
+                        <p class="product-color-name">Orange & Multicolore</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20341-Orange%20%26%20Multicolore" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Carte Modèle 3 - Pointure 41 (Blanc/Rouge/Bleu) -->
+                <div class="product-card filterDiv p41 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="341-Sandales sans cuir décorées de perles2.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="341-Sandales sans cuir décorées de perles22.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="341-Sandales sans cuir décorées de perles222.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="341-Sandales sans cuir décorées de perles12.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 41</div>
+                            <div class="overlay-line-2">Blanc, Rouge & Bleu</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Non-Leather Sandals</h4>
+                        <p class="product-color-name">Blanc, Rouge & Bleu</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20341-Blanc%2C%20Rouge%20%26%20Bleu" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+                
+                <!-- Carte Modèle 3 - Pointure 42 (Orange) -->
+                <div class="product-card filterDiv p42 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 3</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="342-Sandales sans cuir décorées de perles1.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="342-Sandales sans cuir décorées de perles11.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="342-Sandales sans cuir décorées de perles111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 42</div>
+                            <div class="overlay-line-2">Orange & Multicolore</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Non-Leather Sandals</h4>
+                        <p class="product-color-name">Orange & Multicolore</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20342-Orange%20%26%20Multicolore" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Carte Modèle 3 - Pointure 42 (Blanc/Rouge) -->
+                <div class="product-card filterDiv p42 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 3</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="342-Sandales sans cuir décorées de perles2.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="342-Sandales sans cuir décorées de perles22.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="342-Sandales sans cuir décorées de perles222.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 42</div>
+                            <div class="overlay-line-2">Blanc, Rouge & Bleu</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Non-Leather Sandals</h4>
+                        <p class="product-color-name">Blanc, Rouge & Bleu</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20342-Blanc%2C%20Rouge%20%26%20Bleu" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- LIGNE MODÈLE 4 : Beaded Leather Sandals   -->
+        <!-- ========================================== -->
+        <div class="model-section" id="model-4">
+            <h3 class="model-title">4- Beaded Leather Sandals : Sandales en cuir décorées de perles.</h3>
+            <div class="model-divider"></div>
+            
+            <div class="model-filters" id="filters-4">
+                <button class="model-filter-btn active" onclick="filterModel(event, 4, 'all')">Toutes</button>
+                <button class="model-filter-btn" onclick="filterModel(event, 4, 'p38')">38</button>
+                <button class="model-filter-btn" onclick="filterModel(event, 4, 'p39')">39</button>
+                <button class="model-filter-btn" onclick="filterModel(event, 4, 'p40')">40</button>
+                <button class="model-filter-btn" onclick="filterModel(event, 4, 'p41')">41</button>
+                <button class="model-filter-btn" onclick="filterModel(event, 4, 'p42')">42</button>
+            </div>
+
+            <div class="products-grid" id="grid-4">
+
+                <!-- Carte Modèle 4 - Pointure 38 (Bande Multicolore) -->
+                <div class="product-card filterDiv p38 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="438- sandales avec peau1.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="438- sandales avec peau11.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="438- sandales avec peau111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="438- sandales avec peau1111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 38</div>
+                            <div class="overlay-line-2">Cuir Marron & Bande Multicolore</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Leather Sandals</h4>
+                        <p class="product-color-name">Marron & Bande Multicolore</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20438-Marron%20%26%20Bande%20Multicolore" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Carte Modèle 4 - Pointure 38 (Bande Blanche) -->
+                <div class="product-card filterDiv p38 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="438- sandales avec peau2.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="438- sandales avec peau22.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="438- sandales avec peau222.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="438- sandales avec peau2222.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 38</div>
+                            <div class="overlay-line-2">Cuir Marron & Bande Blanche</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Leather Sandals</h4>
+                        <p class="product-color-name">Marron & Bande Blanche</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20438-Marron%20%26%20Bande%20Blanche" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Carte Modèle 4 - Pointure 39 (Cauris) -->
+                <div class="product-card filterDiv p39 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="439- sandales avec peau2.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="439- sandales avec peau22.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="439- sandales avec peau222.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="439- sandales avec peau2222.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 39</div>
+                            <div class="overlay-line-2">Cuir Marron & Cauris</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Leather Sandals</h4>
+                        <p class="product-color-name">Marron & Cauris</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20439-Marron%20%26%20Cauris" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Carte Modèle 4 - Pointure 39 (Ovale Perles) -->
+                <div class="product-card filterDiv p39 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="439- sandales avec peau1.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="439- sandales avec peau11.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="439- sandales avec peau111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="439- sandales avec peau1111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 39</div>
+                            <div class="overlay-line-2">Cuir Marron & Motif Ovale</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Leather Sandals</h4>
+                        <p class="product-color-name">Marron & Motif Ovale</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20439-Marron%20%26%20Motif%20Ovale" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+                
+                <!-- Carte Modèle 4 - Pointure 40 (Cauris) -->
+                <div class="product-card filterDiv p40 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="440-Sandales en cuir décorées de perles3.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="440-Sandales en cuir décorées de perles33.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="440-Sandales en cuir décorées de perles333.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="440-Sandales en cuir décorées de perles3333.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 40</div>
+                            <div class="overlay-line-2">Cuir Marron & Cauris</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Leather Sandals</h4>
+                        <p class="product-color-name">Marron & Cauris</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20440-Marron%20%26%20Cauris" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Carte Modèle 4 - Pointure 40 (Ovale Perles) -->
+                <div class="product-card filterDiv p40 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="440-Sandales en cuir décorées de perles4.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="440-Sandales en cuir décorées de perles44.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="440-Sandales en cuir décorées de perles444.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="440-Sandales en cuir décorées de perles4444.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 40</div>
+                            <div class="overlay-line-2">Cuir Marron & Motif Ovale</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Leather Sandals</h4>
+                        <p class="product-color-name">Marron & Motif Ovale</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20440-Marron%20%26%20Motif%20Ovale" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Carte Modèle 4 - Pointure 41 (Croisé) -->
+                <div class="product-card filterDiv p41 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 3</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="441-Sandales en cuir décorées de perles1.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="441-Sandales en cuir décorées de perles11.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="441-Sandales en cuir décorées de perles111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 41</div>
+                            <div class="overlay-line-2">Marron & Motif Croisé</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Leather Sandals</h4>
+                        <p class="product-color-name">Marron & Motif Croisé</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20441-Marron%20%26%20Motif%20Crois%C3%A9" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Carte Modèle 4 - Pointure 42 (Croisé) -->
+                <div class="product-card filterDiv p42 show">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">❮</button>
+                        <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">❯</button>
+                        <div class="carousel-counter">1 / 4</div>
+                        <div class="carousel-track" onscroll="updateCarousel(this)">
+                            <img src="442-Sandales en cuir décorées de perles1.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="442-Sandales en cuir décorées de perles11.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="442-Sandales en cuir décorées de perles111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                            <img src="442-Sandales en cuir décorées de perles1111.PNG" class="carousel-img" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <button class="btn-show-details" onclick="openOverlay(this)">Voir les détails</button>
+                        <div class="product-overlay">
+                            <div class="close-overlay" onclick="closeOverlay(this)">✕</div>
+                            <div class="overlay-line-1">Pointure : 42</div>
+                            <div class="overlay-line-2">Marron & Motif Croisé</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Beaded Leather Sandals</h4>
+                        <p class="product-color-name">Marron & Motif Croisé</p>
+                        <p class="product-price">Prix à venir</p>
+                        <a href="https://wa.me/22897906557?text=Bonjour,%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20mod%C3%A8le%20442-Marron%20%26%20Motif%20Crois%C3%A9" class="btn-buy" target="_blank">Commander sur WhatsApp</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <section id="apropos">
+        <div class="title-separator">
+            <span></span>
+            <h2 class="section-title">À propos d’AkOr</h2>
+            <span></span>
+        </div>
+        <div class="about-text">
+            <p>AkOr est une boutique en ligne basée à Lomé, au Togo, qui propose une sélection d’essentiels choisis avec soin pour accompagner votre style.</p>
+            <p>Nous croyons que les petits détails peuvent faire toute la différence dans une tenue. C’est pourquoi nous sélectionnons des pièces à la fois élégantes, originales et faciles à intégrer à votre quotidien.</p>
+            <p>Notre objectif ? Vous proposer des articles qui correspondent à votre style, tout en vous offrant une expérience simple et agréable.</p>
+            <p style="font-family: var(--font-titre); font-size: 1.8rem; margin-top: 50px; color: var(--accent-color);">AkOr — Des essentiels en accord avec votre style. ✨</p>
+        </div>
+    </section>
+
+    <section id="commander">
+        <div class="title-separator">
+            <span></span>
+            <h2 class="section-title">Comment commander ?</h2>
+            <span></span>
+        </div>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">01</div>
+                <h3>Choisissez votre modèle</h3>
+                <p>Parcourez notre sélection et choisissez l’article qui vous plaît.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">02</div>
+                <h3>Cliquez sur WhatsApp</h3>
+                <p>Vous serez directement redirigé(e) vers notre discussion WhatsApp.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">03</div>
+                <h3>Confirmez votre commande</h3>
+                <p>Nous confirmerons la disponibilité, la taille et les modalités de livraison.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">04</div>
+                <h3>Recevez votre commande 📦</h3>
+                <p>Votre commande est préparée et remise selon les modalités convenues.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-logo">AkOr Shop</div>
+        
+        <div class="contact-info">
+            <p>Une question ? N'hésitez pas à nous joindre.</p>
+            <p style="margin-top: 15px;">📞 WhatsApp : <a href="https://wa.me/22897906557" target="_blank">+228 97 90 65 57</a></p>
+            <p>✉️ Email : <a href="mailto:akor.connexion@gmail.com">akor.connexion@gmail.com</a></p>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.instagram.com/akor_shop_?stkn=MTdlcTRjazNjNHIxMA==" target="_blank">Instagram</a>
+            <a href="https://www.tiktok.com/@akor.shop?_r=1&_t=ZN-9AMBvTI4k58" target="_blank">TikTok</a>
+            <a href="https://www.facebook.com/61568261402441/" target="_blank">Facebook</a>
+        </div>
+        
+        <p class="copyright">&copy; 2026 AkOr Shop. Tous droits réservés.</p>
+    </footer>
+
+    <a href="https://wa.me/22897906557?text=Bonjour,%20je%20souhaite%20avoir%20plus%20d'informations%20sur%20vos%20articles." class="floating-whatsapp" target="_blank" title="Discuter sur WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.115.548 4.175 1.594 5.992L.03 24l6.113-1.603c1.761.986 3.754 1.505 5.888 1.505 6.646 0 12.031-5.385 12.031-12.031S18.677 0 12.031 0zm0 21.947c-1.815 0-3.593-.487-5.15-1.409l-.369-.219-3.834 1.005 1.02-3.738-.241-.383C2.476 15.485 1.95 13.784 1.95 12.031c0-5.568 4.53-10.098 10.081-10.098 5.551 0 10.081 4.53 10.081 10.098 0 5.568-4.53 10.081-10.081 10.081zm5.534-7.554c-.304-.152-1.795-.886-2.073-.988-.278-.102-.481-.152-.684.152-.203.304-.785.988-.962 1.19-.177.203-.355.228-.659.076-.304-.152-1.282-.473-2.443-1.508-.905-.806-1.517-1.802-1.694-2.106-.177-.304-.019-.469.133-.62.137-.137.304-.355.456-.533.152-.177.203-.304.304-.507.102-.203.051-.381-.025-.533-.076-.152-.684-1.648-.937-2.257-.247-.594-.497-.514-.684-.523-.177-.008-.381-.008-.584-.008-.203 0-.533.076-.811.381-.278.304-1.064 1.039-1.064 2.534 0 1.495 1.089 2.939 1.241 3.142.152.203 2.143 3.27 5.188 4.585.724.312 1.29.498 1.733.637.728.232 1.391.199 1.916.12.585-.088 1.795-.733 2.048-1.442.253-.709.253-1.317.177-1.442-.076-.125-.279-.201-.583-.353z"/>
+        </svg>
+    </a>
+
+    <script>
+        // --- SCRIPT POUR LE LIGHTBOX ---
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            setTimeout(() => { lightboxImg.src = ''; }, 300);
+        }
+
+        // --- SCRIPT POUR LE CARROUSEL ---
+        function scrollCarousel(btn, direction) {
+            const container = btn.parentElement;
+            const track = container.querySelector('.carousel-track');
+            const scrollAmount = track.clientWidth;
+            track.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
+
+        function updateCarousel(track) {
+            const container = track.parentElement;
+            const images = track.querySelectorAll('.carousel-img');
+            const dots = container.querySelectorAll('.dot');
+            const counter = container.querySelector('.carousel-counter');
+            
+            let index = Math.round(track.scrollLeft / track.clientWidth);
+            
+            if(counter) {
+                counter.textContent = (index + 1) + " / " + images.length;
+            }
+            
+            dots.forEach((dot, i) => {
+                if (i === index) dot.classList.add('active');
+                else dot.classList.remove('active');
+            });
+        }
+
+        // --- SCRIPT POUR L'OVERLAY DES DÉTAILS ---
+        function openOverlay(btn) {
+            const container = btn.parentElement;
+            const overlay = container.querySelector('.product-overlay');
+            overlay.classList.add('active');
+        }
+
+        function closeOverlay(btn) {
+            const overlay = btn.parentElement;
+            overlay.classList.remove('active');
+        }
+
+        // --- SCRIPT POUR LE MENU MOBILE ---
+        const menuIcon = document.querySelector('.menu-icon');
+        const navUl = document.querySelector('nav ul');
+
+        menuIcon.addEventListener('click', () => {
+            navUl.classList.toggle('show-menu');
+        });
+
+        // --- SCRIPT POUR LES FILTRES INDÉPENDANTS PAR MODÈLE ---
+        function filterModel(event, modelId, sizeClass) {
+            // 1. Mettre à jour l'apparence des boutons de cette ligne
+            const btns = document.querySelectorAll('#filters-' + modelId + ' .model-filter-btn');
+            btns.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            // 2. Filtrer les cartes de la grille correspondante
+            const grid = document.getElementById('grid-' + modelId);
+            const cards = grid.getElementsByClassName('product-card');
+            
+            for (let i = 0; i < cards.length; i++) {
+                // On retire la classe "show" de toutes les cartes
+                cards[i].classList.remove('show');
+                
+                // Si le filtre est "all" ou que la carte possède la classe demandée (ex: "p41")
+                if (sizeClass === 'all' || cards[i].classList.contains(sizeClass)) {
+                    cards[i].classList.add('show');
+                }
+            }
+        }
+
+        // Initier les filtres au chargement (pour que l'affichage soit correct dès le début)
+        document.addEventListener("DOMContentLoaded", function() {
+            // Sélectionne tous les boutons "Toutes" (qui ont la classe 'active' au départ) et simule un clic
+            const defaultActiveBtns = document.querySelectorAll('.model-filter-btn.active');
+            defaultActiveBtns.forEach(btn => btn.click());
+        });
+
+        // Fermeture automatique du menu mobile au clic sur un lien
+        var navLinks = document.querySelectorAll("nav ul li a");
+        navLinks.forEach(function(link) {
+            link.addEventListener("click", function() {
+                var activeLink = document.querySelector("nav ul li a.active");
+                if (activeLink) activeLink.classList.remove("active");
+                this.classList.add("active");
+                if(window.innerWidth <= 900) {
+                    navUl.classList.remove('show-menu');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
